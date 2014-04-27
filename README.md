@@ -72,9 +72,7 @@ If you want to build a debug version of a Python add *-debug* to the name of
 the Python:
 
 ```puppet
-pyenv_python { '3.4.0-debug':
-  require => Class['::pyenv'],
-}
+pyenv_python { '3.4.0-debug': }
 ```
 
 ### Resource ordering
