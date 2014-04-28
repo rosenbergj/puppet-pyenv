@@ -1,5 +1,5 @@
 name 'daenney-pyenv'
-version '0.9.0'
+version '0.9.1'
 source 'git://github.com/daenney/puppet-pyenv.git'
 author 'daenney'
 license 'Apache 2.0'
