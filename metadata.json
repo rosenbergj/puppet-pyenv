@@ -1,61 +1,56 @@
 {
-    "name": "daenney-pyenv",
-    "version": "master",
-    "source": "git://github.com/daenney/puppet-pyenv.git",
-    "author": "daenney",
-    "license": "Apache 2.0",
-    "summary": "Puppet module for pyenv",
-    "description": "Install and manage Pythons with pyenv",
-    "project_page": "https://github.com/daenney/puppet-pyenv",
-    "dependencies": [
+  "operatingsystem_support": [
     {
-        "name": "puppetlabs/stdlib",
-        "version_requirement": ">= 3.2.1"
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
     },
     {
-        "name": "puppetlabs/vcsrepo",
-        "version_requirement": ">= 0.2.0"
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04"
+      ]
     }
-    ],
-    "operatingsystem_support": [
-        {
-            "operatingsystem": "RedHat",
-            "operatingsystemrelease": [
-                "5",
-                "6"
-            ]
-        },
-        {
-            "operatingsystem": "CentOS",
-            "operatingsystemrelease": [
-                "5",
-                "6"
-            ]
-        },
-        {
-            "operatingsystem": "Debian",
-            "operatingsystemrelease": [
-                "6",
-                "7"
-            ]
-        },
-        {
-            "operatingsystem": "Ubuntu",
-            "operatingsystemrelease": [
-                "10.04",
-                "12.04",
-                "14.04"
-            ]
-        },
-    ],
-    "requirements": [
-        {
-            "name": "pe",
-            "version_requirement": "3.2.x"
-        },
-        {
-            "name": "puppet",
-            "version_requirement": "3.x"
-        }
-    ],
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.2.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "name": "puppetlabs-ntp",
+  "version": "3.0.3",
+  "source": "git://github.com/puppetlabs/puppetlabs-ntp",
+  "author": "Puppet Labs",
+  "license": "Apache Version 2.0",
+  "summary": "NTP Module",
+  "description": "NTP Module for Debian, Ubuntu, CentOS, RHEL, OEL, Fedora, FreeBSD, ArchLinux and Gentoo.",
+  "project_page": "http://github.com/puppetlabs/puppetlabs-ntp",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 0.1.6"
+    }
+  ]
 }
