@@ -41,7 +41,7 @@ Puppet::Type.type(:pyenv_python).provide(:pyenv) do
         :name       => python_version,
         :ensure     => :present,
         :virtualenv => virtualenv,
-        :keep       => keep,
+        :keep       => keep
       )
     end
     python_versions.compact!
