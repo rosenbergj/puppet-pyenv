@@ -10,7 +10,6 @@ Pythons outside of your platforms package manager's purview.
 3. [Setup - The basics of getting started with pyenv](#setup)
     * [Beginning with pyenv - Installation](#beginning-with-pyenv)
     * [Installing a Python - Basic options for getting started](#installing-a-python)
-    * [Resource ordering](#resource-ordering)
     * [Relocating pyenv](#relocating-the-pyenv-installation)
 4. [Usage - The classes and types available for configuration](#usage)
     * [Classes](#classes)
@@ -74,31 +73,6 @@ the Python:
 ```puppet
 pyenv_python { '3.4.0-debug': }
 ```
-
-### Resource ordering
-Unfortunately due to how Puppet works there is no way to instruct the provider
-that in order for it to work it needs to wait on the *vcsrepo* resource and only
-then evaluate possible candidates.
-
-Because of this we provide a fact called `pyenv_installed` which will try to
-detect if pyenv is installed. The fact takes into account the value of the
-`pyenv_binary` fact, searches through `$PATH` and tries to find pyenv at
-`/usr/local/pyenv/bin/pyenv`. If any of those succeed the value will be `true`,
-else it will return `false`.
-
-This means you can now do:
-
-```puppet
-if str2bool($::pyenv_installed) {
-  pyenv_python { '3.4.0': }
-}
-```
-
-Using this trick means that you will need two Puppet runs the first time:
-
-* The first to setup pyenv, at this point `pyenv_installed` will be `false`;
-* The second run will now detect that pyenv is installed, `pyenv_installed`
-  will be `true` and the Pythons will be built.
 
 ### Relocation the pyenv installation
 The module installs pyenv to `/usr/local/pyenv` by default and symlinks the

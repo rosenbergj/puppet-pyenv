@@ -5,6 +5,7 @@ require 'puppet/util'
 Puppet::Type.type(:pyenv_python).provide(:pyenv) do
 
   defaultfor :feature => :posix
+  confine :feature => :pyenv
 
   if not Facter.value(:pyenv_binary).nil?
     has_command(:pyenv, Facter.value(:pyenv_binary)) do
