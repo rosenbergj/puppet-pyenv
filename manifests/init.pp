@@ -37,9 +37,7 @@ class pyenv(
       warn('You have requested to install packages but
       $python_build_packages is empty')
     } else {
-      package { $python_build_packages:
-        ensure => $ensure_packages,
-      }
+      ensure_packages( $python_build_packages, {'ensure' => 'present' })
     }
   }
 }
