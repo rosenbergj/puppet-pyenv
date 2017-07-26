@@ -14,7 +14,8 @@ Puppet::Type.type(:pyenv_python).provide(:pyenv) do
     end
   else
     has_command(:pyenv, 'pyenv') do
-      PYENV_ROOT = File.dirname(File.dirname(Pathname.new(Puppet::Util.which('pyenv')).realpath.to_s))
+      WHICH = Puppet::Util.which('pyenv')
+      PYENV_ROOT = WHICH ? File.dirname(File.dirname(Pathname.new(WHICH).realpath.to_s)) : '/usr/local/pyenv/'
       environment({ 'PYENV_ROOT' => PYENV_ROOT })
     end
   end
